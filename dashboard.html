@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Cab-booking</title>
+  <link rel="stylesheet" href="cab.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo-image"></div>
+        <div class="logo">
+          <p>Capify</p>
+        </div>
+      </div>
+      <ul class="menu">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Book a Taxi</a></li>
+        <li class="dropdown">
+          <a href="#">Account <i class="fas fa-caret-down"></i></a>
+          <div class="dropdown-content">
+            <a href="#">Sign in</a>
+            <a href="#">Log in</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="body-section">
+    <div class="body-image">
+      <div class="body-text">
+        <h1>Go Anywhere with <br>Capify</h1>
+      </div>
+      <div class="input-row">
+        <select id="fromLocation">
+          <option value="Belagavi">Belagavi</option>
+          <!-- <option value="Bengaluru">Bengaluru</option> -->
+          <option value="Chikkodi">Chikkodi</option>
+          <option value="Nippani">Nippani</option>
+          <option value="Gokak">Gokak</option>
+          <option value="Hukkeri">Hukkeri</option>
+          <!-- Add more options as needed -->
+        </select><br>
+        <select id="toLocation">
+          <option value="Belagavi">Belagavi</option>
+          <!-- <option value="Bengaluru">Bengaluru</option> -->
+          <option value="Chikkodi">Chikkodi</option>
+          <option value="Nippani">Nippani</option>
+          <option value="Gokak">Gokak</option>
+          <option value="Hukkeri">Hukkeri</option>
+          <!-- Add more options as needed -->
+        </select><br>
+        <button id="see-prices" onclick="seePrices()">See Prices</button>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2024 Capify. All rights reserved.</p>
+      <ul>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    function seePrices() {
+      var fromLocation = document.getElementById('fromLocation').value;
+      var toLocation = document.getElementById('toLocation').value;
+      var totalPrice = calculatePrice(fromLocation, toLocation);
+      document.getElementById('see-prices').innerText = 'See Prices: Rs. ' + totalPrice;
+    }
+
+    function calculatePrice(fromLocation, toLocation) {
+      // Implement your pricing logic here
+      var priceTable = {
+        'Belagavi': {
+          'Bengaluru': 1000,
+          'Chikkodi': 400,
+          'Nippani': 400,
+          'Gokak': 400,
+          'Hukkeri': 400
+        },
+        'Bengaluru': {
+          'Belagavi': 1000
+        },
+        'Chikkodi': {
+          'Belagavi': 400,
+          'Gokak': 200,
+          'Hukkeri': 200,
+          'Nippani': 200
+        },
+        'Nippani': {
+          'Belagavi': 400,
+          'Chikkodi': 200,
+          'Gokak': 200,
+          'Hukkeri': 200
+        },
+        'Gokak': {
+          'Belagavi': 400,
+          'Chikkodi': 200,
+          'Hukkeri': 200,
+          'Nippani': 200
+        },
+        'Hukkeri': {
+          'Belagavi': 400,
+          'Chikkodi': 200,
+          'Gokak': 200,
+          'Nippani': 200
+        }
+      };
+
+      if (fromLocation in priceTable && toLocation in priceTable[fromLocation]) {
+        return priceTable[fromLocation][toLocation];
+      } else {
+        return 'Price not available for this route';
+      }
+    }
+  </script>
+</body>
+</html>

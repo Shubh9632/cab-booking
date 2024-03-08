@@ -1,0 +1,194 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar CSS */
+.navbar {
+  background: linear-gradient(to right, red, yellow);
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navbar .logo {
+  font-size: 24px;
+}
+
+.navbar .logo p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.container {
+  width: 60px;
+}
+
+.logo-image {
+  background-image: url("cab3.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 60px;
+  width: 100%;
+  background-color: transparent;
+  background-size: contain;
+}
+
+.navbar .menu {
+  list-style: none;
+  display: flex;
+  width: 400px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navbar .menu li {
+  margin-left: 20px;
+}
+
+.navbar .menu li:first-child {
+  margin-left: 0;
+}
+
+.navbar .menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 21px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar .menu a:hover {
+  color: #fff;
+}
+
+.navbar .menu .dropdown {
+  position: relative;
+}
+
+.navbar .menu .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.navbar .menu .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.navbar .menu .dropdown-content a {
+  color: bl;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.navbar .menu .dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar .menu {
+    margin-top: 10px;
+  }
+
+  .navbar .menu li {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.body-section {
+  background-color: #FFFFFF;
+  height: 900px;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.body-image {
+  background-image: url("background_img.jpg");
+  height: 800px;
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center;
+} 
+
+.input-row select {
+  height: 48px;
+  width: 396px;
+  border-radius: 25px;
+  padding: 10px 0px 10px 36px;
+  font-size: 1rem;
+  margin-bottom: 10px; /* Added margin to match your input row styles */
+}
+
+.input-row button {
+  height: 55px;
+  width: 127px;
+  border-radius: 25px;
+  padding: 0px 25px;
+  font-size: 1rem;
+}
+
+.body-text {
+  padding: 150px 0px 10px 50px ;
+  font-size: 25px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  height: 100px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.footer-content ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-content ul li {
+  display: inline;
+  margin-left: 20px;
+}
+
+.footer-content ul li:first-child {
+  margin-left: 0;
+}
+
+.footer-content ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-content ul li a:hover {
+  text-decoration: underline;
+}
