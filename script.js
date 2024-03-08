@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const username = document.getElementById("loginUsername").value;
         const password = document.getElementById("loginPassword").value;
         
-        fetch('http://localhost:5000/login', {
+        fetch('https://cab-booking2-3tgh.onrender.com/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const username = document.getElementById("signupUsername").value;
         const password = document.getElementById("signupPassword").value;
         
-        fetch('http://localhost:5000/signup', {
+        fetch('https://cab-booking2-3tgh.onrender.com/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
